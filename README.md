@@ -23,10 +23,14 @@ Our best result was a 97% accuracy with both SVM_CNN and SVM_XGBoost on the Wisc
 - *SVM_XGBoost*: TN=298, FP=2, FN=9, TP=89 (Recall: 0.91 for class 1, but fewer FPs suggest better precision balance).
 - *Achievement*: SVM_XGBoost leveraged XGBoost’s probability outputs as enriched features, enabling SVM to better distinguish malignant cases. The process involved training XGBoost (logloss metric), extracting probabilities, and optimizing SVM (probability=True) on these features, enhanced by preprocessing and cross-validation.
 
+![](https://raw.githubusercontent.com/PrajitaB/Breast_Cancer_Detection/refs/heads/main/Wisconsin_Hybrid.jpg)
+
 ### Comparison
 - *Our Models*: Both achieved 97% accuracy, with SVM_XGBoost excelling in true positives (89 vs. 89, but with fewer FPs: 2 vs. 3), prioritizing sensitivity over SVM_CNN.
 - *Traditional Models (Wisconsin)*: XGBoost (97%), SVM (97%), CNN (70%), KNN (95%), RF (93%), LR (96%), NB (94%), DT (95%), ANN (66%), MobileNet (75%).
 - *Prior Works (WDBC)*: Kalbkhani et al. (98.59%, RF+GOA), Mavrogiorgou et al. (98.53%, SVM), Chaurasia and Pal (97.36%, MLP).
 - *Analysis*: Our 97% is competitive, slightly below top ensemble models (98.59%, 98.53%) but balances accuracy, sensitivity, and computational efficiency. SVM_XGBoost’s higher sensitivity makes it clinically preferable over SVM_CNN and aligns with medical diagnostic needs, though it trails the optimized ensembles in raw accuracy.
+
+![](https://raw.githubusercontent.com/PrajitaB/Breast_Cancer_Detection/refs/heads/main/Winconsin_Traditional.jpg)
 
 In summary, SVM_XGBoost’s superior true positive rate, achieved through probabilistic feature enhancement and rigorous validation, positions it as our standout model for breast cancer detection, offering a practical, sensitive solution despite not topping prior accuracy peaks.
